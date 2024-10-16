@@ -1,0 +1,57 @@
+.container{
+  padding: 80rem 150rem;
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    padding: 60rem 75rem;
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    padding: 40rem 50rem;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 40rem 24rem;
+  }
+}
+
+.logotype{
+  width: 100%;
+  height: 100%;
+}
+
+.blue-text{
+  color: #EE7203;
+}
+
+.green-text{
+  color: #009A94;
+}
+
+.white-text{
+  color: #FFF;
+}
+
+.gradient-block{
+  background: radial-gradient(101.59% 57.27% at 50% 59.3%, rgba(77, 133, 255, 0.40) 0%, rgba(247, 248, 250, 0.00) 100%), #F7F8FA;
+}
+
+.title {
+  font-size: 56rem;
+  line-height: 120%;
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    font-size: 44rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 24rem;
+    font-weight: 500;
+  }
+}
+
+#quiz, #portfolio, #stock, #reviews, #questions, #footer{
+  scroll-margin-top: 100rem;
+  @media (max-width: $mobile) {
+    scroll-margin-top: 50rem;
+  }
+}

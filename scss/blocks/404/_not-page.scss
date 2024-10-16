@@ -1,0 +1,30 @@
+.not-page{
+  padding-top: 150rem;
+  padding-bottom: 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+
+  &__title{
+    font-size: 180rem;
+    line-height: 120%;
+  }
+
+  &__text{
+    font-size: 60rem;
+    line-height: 120%;
+  }
+
+  @media (max-width: $mobile) {
+    &__title{
+      font-size: 130rem;
+    }
+
+    &__text{
+      font-size: 24rem;
+    }
+  }
+}

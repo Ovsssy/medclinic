@@ -1,0 +1,63 @@
+.swiper-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  column-gap: 40rem;
+  height: 60rem;
+
+  &__prev,
+  &__next {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 60rem;
+    height: 60rem;
+    border-radius: 50%;
+    background-color: #EE7203;
+    transition: background-color 0.3s ease;
+
+    & svg,
+    & mask {
+      width: 32rem;
+      height: 32rem;
+    }
+
+    & rect{
+      width: 100%;
+      height: 100%;
+    }
+
+    & svg {
+      & path {
+        transition: fill 0.3s ease;
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__prev {
+    & svg {
+      rotate: 180deg;
+    }
+  }
+
+  @media (min-width: $desktop) {
+
+    &__prev,
+    &__next {
+      &:hover {
+        background-color: #FFF;
+
+        & path {
+          fill: #EE7203;
+        }
+      }
+    }
+  }
+
+}

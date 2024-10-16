@@ -1,0 +1,18 @@
+.success {
+  display: none;
+
+  &-popup{
+    display: none;
+    color: #0050a0 !important;
+  }
+}
+
+.active {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+  font-size: 18rem;
+  line-height: 120%;
+  color: #FFF;
+}

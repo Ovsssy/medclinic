@@ -1,0 +1,255 @@
+.stages {
+
+  &__title {
+    margin-bottom: 20rem;
+
+    &-blue-text {
+      font-size: 56rem;
+      line-height: 120%
+    }
+  }
+
+  &__description {
+    margin-bottom: 60rem;
+    width: 728rem;
+  }
+
+  .stages-blocks-wrapper {
+    position: relative;
+  }
+
+  &-block {
+    padding: 40rem;
+    border-radius: 24rem;
+    background-color: #F7F8FA;
+
+    &:not(:last-child) {
+      margin-bottom: 40rem;
+    }
+
+    &__title {
+      margin-bottom: 40rem;
+      font-size: 40rem;
+      line-height: 120%;
+
+      &-blue {
+        font-size: 40rem;
+        line-height: 120%;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20rem;
+
+    &-image {
+      display: flex;
+      justify-content: center;
+      width: 292rem;
+      height: 193rem;
+      border-radius: 20rem;
+      background-color: #FFF;
+      overflow: hidden;
+
+      & img {
+        user-select: none;
+        object-fit: cover;
+      }
+    }
+
+
+    &:last-child {
+
+      & .stages__item-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #009A94;
+
+        & img {
+          width: 40rem;
+          height: 40rem;
+        }
+
+        &-time {
+          font-size: 56rem;
+          line-height: 120%;
+        }
+      }
+    }
+  }
+
+  &__plus {
+    position: relative;
+    width: 66rem;
+    height: 66rem;
+    flex-shrink: 0;
+    background-image: url('../img/plus-stages.svg');
+    background-size: 100% 100%;
+
+    &-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 66rem;
+      height: 66rem;
+      border-radius: 50%;
+      background-color: #EE7203;
+      z-index: -1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -12rem;
+      left: -12rem;
+      width: 90rem;
+      height: 90rem;
+      border-radius: 50%;
+      background-color: rgba(238, 114, 3, 0.20);
+      z-index: -2;
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    &__list {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__description {
+      width: auto;
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    &-block {
+      padding: 30rem;
+    }
+
+    &__item {
+      &:last-child {
+        width: 100%;
+
+        & .stages__item-image {
+          width: 100%;
+          gap: 15rem;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &__title {
+      width: 310rem;
+
+      &-blue-text {
+        font-size: 24rem;
+      }
+    }
+
+    &__description{
+      margin-bottom: 24rem;
+    }
+
+    &__list{
+      justify-content: center;
+      gap: 12rem;
+    }
+
+    &__item {
+      width: 134rem;
+
+      &-image {
+        width: 100%;
+        height: 100rem;
+      }
+
+      &-text {
+        text-align: center;
+      }
+
+      &:last-child {
+        width: 100%;
+
+        & .stages__item-image {
+          flex-direction: row;
+          gap: 10rem;
+          height: 64rem;
+
+          &-time {
+            font-size: 32rem;
+          }
+
+          &-unit {
+            font-size: 24rem;
+          }
+        }
+      }
+    }
+
+    &__plus {
+      width: 30rem;
+      height: 30rem;
+
+      &:before {
+        width: 30rem;
+        height: 30rem;
+      }
+
+      &:after {
+        top: -5rem;
+        left: -5rem;
+        width: 40rem;
+        height: 40rem;
+      }
+    }
+
+    &-block {
+      padding: 16rem;
+
+      &:not(:last-child) {
+        margin-bottom: 16rem;
+      }
+
+      &__title {
+        font-size: 28rem;
+
+        &-blue {
+          font-size: 28rem;
+        }
+      }
+    }
+  }
+}

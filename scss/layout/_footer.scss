@@ -1,0 +1,260 @@
+.footer {
+  position: relative;
+  background-color: #2B313E;
+
+  &-container {
+    position: relative;
+    display: grid;
+    grid-template-areas: "first-wrapper first-wrapper footer-button"
+      "info map map"
+      "contraindications contraindications contraindications";
+    row-gap: 40rem;
+    padding-top: 40rem;
+    padding-bottom: 40rem;
+  }
+
+  &__logotype {
+    width: 283rem;
+    height: 55rem;
+  }
+
+  &-first-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: first-wrapper;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40rem;
+    grid-area: info;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+
+      & span {
+        font-weight: 300;
+        color: #FFF;
+      }
+
+      &-accounts {
+        display: flex;
+        gap: 10rem;
+      }
+
+      & .footer__button {
+        display: none;
+      }
+    }
+
+    &__title {
+      font-size: 20rem;
+      font-weight: 300;
+      line-height: 130%;
+      color: #A1A8B9;
+    }
+
+    &__content {
+      font-size: 24rem;
+      font-weight: 600;
+      line-height: 120%;
+      color: #FFF;
+    }
+  }
+
+  &__map {
+    grid-area: map;
+    justify-self: end;
+    width: 937rem;
+    height: 451rem;
+    flex-shrink: 0;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12rem;
+      object-fit: cover;
+    }
+  }
+
+  &__phone-wrapper {
+    display: flex;
+
+    & p {
+      display: none;
+    }
+  }
+
+  &-navigation-list {
+    justify-content: start;
+    gap: 30rem;
+
+    &__item {
+      & a {
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: auto;
+          bottom: -8rem;
+          left: 0;
+          width: 100%;
+          height: 1rem;
+          background-color: #FFF;
+          opacity: 0;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        &:hover {
+
+          &:before {
+            transform: translate(0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    flex-direction: row;
+    gap: 20rem;
+    justify-self: end;
+    border-radius: 60rem;
+    grid-area: footer-button;
+
+    & img {
+      width: 32rem;
+      height: 32rem;
+    }
+  }
+
+  &__contraindications {
+    grid-area: contraindications;
+    text-align: center;
+    align-self: center;
+    font-size: 36rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    color: #3A404C;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    &-container {
+      grid-template-areas: "first-wrapper first-wrapper"
+        "footer-button footer-button"
+        "info map"
+        "contraindications contraindications";
+      row-gap: 30rem;
+    }
+
+    &-navigation-list {
+      gap: 20rem;
+    }
+
+    &__button {
+      justify-self: start;
+    }
+
+    &__map {
+      width: 540rem;
+      height: 365rem;
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    &-container {
+      grid-template-areas: "first-wrapper"
+        "info"
+        "footer-button"
+        "contraindications"
+        "map";
+      row-gap: 25rem;
+    }
+
+    &-first-wrapper {
+      flex-wrap: wrap;
+      gap: 20rem;
+    }
+
+    &__logotype {
+      width: 148rem;
+      height: 29rem;
+      grid-area: logotype;
+      order: 0;
+    }
+
+    &-navigation-list {
+      flex-wrap: wrap;
+      gap: 20rem;
+      order: 2;
+    }
+
+    &__phone-wrapper {
+      display: flex;
+      flex-direction: column;
+      grid-area: phone-footer;
+      order: 1;
+
+      & p {
+        display: block;
+      }
+    }
+
+    &__map {
+      width: 100%;
+      height: 325rem;
+    }
+
+    &__contraindications {
+      font-size: 16rem;
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    &-first-wrapper {
+      column-gap: 50rem;
+      row-gap: 20rem;
+      justify-content: start;
+    }
+
+    &__button {
+      justify-self: start;
+    }
+
+    &__contraindications {
+      font-size: 22rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-info {
+      flex-direction: column;
+      gap: 16rem;
+
+      &__title {
+        font-size: 14rem;
+      }
+
+      &__content {
+        font-size: 16rem;
+      }
+
+      &__item {
+        & span {
+          font-size: 14rem;
+        }
+      }
+    }
+  }
+}

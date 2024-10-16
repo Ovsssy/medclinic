@@ -1,0 +1,135 @@
+.questions {
+  &__title {
+    margin-bottom: 60rem;
+  }
+
+  &-accordion {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20rem;
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1 1 49%;
+      padding: 30rem;
+      border-radius: 20rem;
+      background: #F7F8FA;
+      transition: background-color 0.5s ease, padding 0.5s ease;
+      cursor: pointer;
+
+      &-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: flex-start;
+        width: 100%;
+        transition: padding 0.5s ease;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40rem;
+          height: 40rem;
+          background-image: url('../img/questions-plus.svg');
+          background-size: 40rem 40rem;
+          transition: opacity 0.5s ease;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40rem;
+          height: 40rem;
+          background-image: url('../img/questions-minus.svg');
+          background-size: 40rem 40rem;
+          opacity: 0;
+          // z-index: 1;
+        }
+
+        &--active {
+
+          &:before {
+            opacity: 0;
+          }
+
+          &:after {
+            opacity: 1;
+            // z-index: 1;
+          }
+        }
+      }
+
+      &-title {
+        display: flex;
+        align-items: center;
+        column-gap: 10rem;
+        min-height: 40rem;
+        font-size: 28rem;
+        font-weight: 500;
+        line-height: 110%;
+        transition: margin-bottom 0.5s ease;
+
+        &--breadth{
+          width: 85%;
+        }
+
+        &--indent {
+          margin-bottom: 25rem;
+        }
+      }
+
+      &-description {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        padding: 0 0;
+
+        &--visible {
+          display: block;
+          max-height: 500rem;
+        }
+      }
+
+      &--active {
+        background-color: #E1E5F1;
+      }
+    }
+  }
+
+  @media (max-width: $desktop) {
+    &-accordion {
+      &__item {
+        &-title {
+          font-size: 24rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-accordion {
+      &__item {
+        padding: 20rem;
+
+        &-title{
+          font-size: 14rem;
+        }
+
+        &-wrapper{
+          &:after, &:before{
+            width: 32rem;
+            height: 32rem;
+            background-size: 32rem 32rem;
+          }
+        }
+      }
+    }
+  }
+}

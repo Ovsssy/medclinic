@@ -1,0 +1,54 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 312rem;
+  height: 80rem;
+  border: none;
+  border-radius: 12rem;
+  background-color: #EE7203;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+
+  & span {
+    transition: color 0.5s ease;
+    color: #FFF;
+  }
+
+  &:hover {
+    background-color: #D96700;
+
+    & span {
+      color: #FFF;
+    }
+  }
+
+  &:active, &:focus, &:focus-visible, &:target{
+    background-color: #D96700;
+    border: none;
+    & span {
+      color: #FFF;
+    }
+  }
+
+  &:disabled{
+    background-color: #CDD1DD;
+  }
+
+  &:focus-visible{
+    outline: none;
+  }
+
+  @media (max-width: $tablet) {
+    height: 60rem;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+
+    & span{
+      font-size: 14rem;
+    }
+  }
+}

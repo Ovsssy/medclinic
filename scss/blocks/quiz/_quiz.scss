@@ -1,0 +1,467 @@
+.quiz {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90rem;
+  row-gap: 60rem;
+  background: radial-gradient(101.59% 57.27% at 50% 59.3%, rgba(77, 133, 255, 0.40) 0%, rgba(247, 248, 250, 0.00) 100%), #F7F8FA;
+
+  &-title-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 20rem;
+    margin-bottom: 60rem;
+  }
+
+  &-plus {
+    width: 40rem;
+    height: 40rem;
+    user-select: none;
+  }
+
+  &-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 60rem;
+    border-radius: 20rem;
+    background: #FFF;
+
+
+    &__footnote {
+      display: flex;
+      justify-content: start;
+      column-gap: 10rem;
+      margin-bottom: 40rem;
+
+      & img {
+        width: 24rem;
+        height: 24rem;
+      }
+    }
+
+    &-title {
+      margin-bottom: 40rem;
+      font-size: 28rem;
+      font-weight: 500;
+      line-height: 110%;
+
+      &-last {
+        margin-bottom: 10rem;
+        font-size: 32rem;
+        font-weight: 600;
+      }
+
+      & span {
+        font-size: 28rem;
+        font-weight: 500;
+        line-height: 110%;
+        color: #A1A8B9;
+      }
+    }
+
+    &-desc {
+      width: 700rem;
+      margin-bottom: 40rem;
+      font-size: 20rem;
+      font-weight: 600;
+      line-height: 130%;
+      color: #A1A8B9;
+    }
+
+    &__steps {
+      display: flex;
+      gap: 20rem;
+      margin-bottom: 20rem;
+
+      &-line {
+        width: 100%;
+        height: 4rem;
+        border-radius: 10rem;
+        background-color: #E1E5F1;
+        transition: background-color 0.5s ease;
+
+        &--active {
+          background-color: #EE7203;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: 20rem;
+      margin-bottom: 40rem;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20rem;
+        width: 360rem;
+      }
+
+      &__image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 225rem;
+        margin-bottom: 20rem;
+        border: none;
+        border-radius: 20rem;
+        background: #F7F8FA;
+        transition: all 0.5s ease;
+        cursor: pointer;
+
+        &-upper-jaw,
+        &-low-jaw {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #F7F8FA;
+            border-radius: 20rem 20rem 0 0;
+            opacity: 0.8;
+            z-index: 20;
+            transition: background-color 0.5s ease, opacity 0.5s ease;
+          }
+        }
+
+        &-low-jaw {
+          &:before {
+            top: auto;
+            bottom: 0;
+            border-radius: 0 0 20rem 20rem;
+          }
+        }
+
+        &--active {
+          position: relative;
+          background-color: rgba(0, 154, 148, 0.20);
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 20rem;
+            right: 20rem;
+            width: 40rem;
+            height: 40rem;
+            border-radius: 50%;
+            background-image: url('../img/check_circle-white.svg');
+            background-size: 40rem 40rem;
+            z-index: 21;
+          }
+
+          &.quiz-block-list__image-upper-jaw {
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 50%;
+              background-color: #CCEBEAC4;
+              opacity: 0.8;
+              z-index: 20;
+            }
+          }
+
+          &.quiz-block-list__image-low-jaw {
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: auto;
+              bottom: 0;
+              width: 100%;
+              height: 50%;
+              border-radius: 0 0 20rem 20rem;
+              background-color: #CCEBEAC4;
+              opacity: 0.8;
+              z-index: 20;
+            }
+          }
+        }
+
+        & img {
+          width: 100%;
+          height: 100%;
+          border-radius: 20rem;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__content-present {
+      position: absolute;
+      bottom: 0;
+      right: 121rem;
+      width: 540rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-title {
+        font-family: "Geologica";
+        font-size: 28rem;
+        font-weight: 600;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #EE7203;
+      }
+
+      &-text {
+        font-family: "Geologica";
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 130%;
+      }
+
+      & img {
+        margin-top: -30rem;
+        width: 100%;
+        height: 360rem;
+      }
+    }
+
+    &__button {
+      &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      &-prev {
+        justify-self: flex-start;
+        opacity: 0;
+        cursor: unset;
+
+        &--active {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+
+      &-next {
+        justify-self: flex-end;
+
+        &--none {
+          opacity: 0;
+        }
+      }
+    }
+
+    &__radio {
+      display: none;
+    }
+
+    &__total {
+      margin-top: 20rem;
+
+      & h3 {
+        color: #EE7203;
+
+        & span {
+          font-size: 24rem;
+          color: #EE7203;
+        }
+      }
+    }
+  }
+
+  &-last-wrapper {
+    width: 332rem;
+
+    &__input {
+      margin-bottom: 95rem;
+      height: 66rem;
+      padding-left: 40rem;
+      border-radius: 50rem !important;
+    }
+
+    &__button {
+      height: 80rem;
+      margin-bottom: 10rem;
+      color: #FFF;
+    }
+
+    &__text {
+      text-align: center;
+      width: 324rem;
+      font-size: 16rem;
+      color: #A1A8B9;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    &-block {
+      &-list {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      &__button {
+        justify-self: center;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    padding-top: 75rem;
+  }
+
+  @media (max-width: $tablet) {
+
+    &-title-wrapper {
+      flex-direction: column;
+      gap: 20rem;
+    }
+
+    &-block {
+
+      &__footnote {
+        margin-bottom: 20rem;
+      }
+
+      &__steps {
+        gap: 10rem;
+      }
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+
+    padding-top: 260rem;
+
+    &-block {
+      &-list {
+
+        &__item {
+          width: 250rem;
+        }
+
+        &__image {
+          height: 200rem;
+        }
+      }
+
+      &-desc{
+        width: 100%;
+      }
+
+      &__content{
+        &-present{
+          right: 0;
+          width: 285rem;
+          & img{
+            height: 200rem;
+          }
+        }
+      }
+
+      &__button {
+        width: 250rem;
+      }
+    }
+
+    &-last{
+      &-wrapper{
+        &__input{
+          margin-bottom: 40rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 248rem;
+
+    &-title-wrapper {
+      gap: 10rem;
+      margin-bottom: 12rem;
+    }
+
+    &-block {
+      padding: 16rem;
+
+      &-title {
+        margin-bottom: 20rem;
+        font-size: 20rem;
+
+        & span {
+          font-size: 20rem;
+        }
+      }
+
+      &-list {
+        margin-bottom: 16rem;
+        gap: 12rem;
+
+        &__item {
+          width: 134rem;
+          flex-shrink: 0;
+        }
+
+        &__image {
+          height: 129rem;
+
+          &--active {
+            &:after {
+              bottom: 10rem;
+              right: 10rem;
+            }
+          }
+        }
+      }
+
+      &-desc {
+        width: auto;
+        margin-bottom: 20rem;
+        font-size: 14rem;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &__content-present {
+        display: none;
+      }
+
+      &-last-title {
+        font-size: 26rem;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      height: 40rem;
+
+      &-wrapper {
+        gap: 10rem;
+      }
+    }
+
+    &-last-wrapper {
+      width: 100%;
+
+      &__input {
+        margin-bottom: 20rem;
+      }
+
+      &__text {
+        width: 100%;
+      }
+
+      &__button {
+        height: 60rem;
+      }
+    }
+
+    &-plus {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import 'normalize','media', 'globals', 'utils', 'fonts';
+
+@import 'blocks/utils/navigation', 'blocks/utils/button', 'blocks/utils/rating', 'blocks/utils/present','blocks/utils/twentytwenty', 'blocks/utils/swiper-buttons', 'blocks/utils/burger-menu';
+
+@import 'layout/header';
+
+@import 'blocks/preview/preview';
+
+@import 'blocks/advantages/advantages';
+
+@import 'blocks/quiz/quiz';
+
+@import 'blocks/portfolio/portfolio';
+
+@import 'blocks/improvements/improvements';
+
+@import 'blocks/form/form-block', 'blocks/form/form', 'blocks/form/checkbox';
+
+@import 'blocks/experts/experts';
+
+@import 'blocks/stock/stock';
+
+@import 'blocks/stages/stages';
+
+@import 'blocks/benefit/benefit';
+
+@import 'blocks/reviews/reviews';
+
+@import 'blocks/questions/questions';
+
+@import 'blocks/utils/popup', 'blocks/utils/form', 'blocks/utils/modals';
+
+@import 'blocks/404/not-page';
+
+@import 'layout/footer';

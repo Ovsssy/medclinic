@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0px;
+
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+
+div{
+  font-family: 'Geologica';
+}
+
+h1,
+h2 {
+  font-family: 'Geologica';
+  font-size: 56rem;
+  font-weight: 400;
+  line-height: 120%;
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    font-size: 52rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 36rem;
+  }
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Geologica';
+  font-size: 24rem;
+  font-weight: 400;
+  line-height: 110%;
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    font-size: 22rem;
+  }
+}
+
+span,
+p,
+a,
+input,
+label,
+address,
+button {
+  font-family: 'Geologica';
+  font-size: 20rem;
+  font-style: inherit;
+  line-height: 130%;
+  color: #2B313E;
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    font-size: 18rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 14rem;
+  }
+}
+
+a {
+  font-family: 'Geologica';
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,72 @@
+.present {
+  position: relative;
+  display: flex;
+  padding: 10rem;
+  max-width: 438rem;
+  border-radius: 20rem;
+  background-color: #FFF;
+  box-shadow: 0 0 11.3rem 0 rgba(255, 255, 255, 0.53);
+
+  &__image {
+    width: 143rem;
+    height: 86rem;
+    margin-right: 15rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    width: 211rem;
+    gap: 5rem;
+
+    &-title {
+      font-size: 20rem;
+      line-height: 120%;
+    }
+
+    &-blue {
+      font-size: 24rem;
+      font-weight: 600;
+      line-height: 120%;
+    }
+  }
+
+  &__icon {
+    align-self: flex-start;
+    width: 32rem;
+    height: 32rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 100%;
+    padding: 8rem;
+    align-items: center;
+    gap: 12rem;
+
+    &__text {
+      &-title {
+        font-size: 14rem;
+      }
+
+      &-blue {
+        font-size: 16rem;
+      }
+    }
+
+    &__image {
+      width: 84rem;
+      height: 50rem;
+      margin-right: 0;
+    }
+  }
+}

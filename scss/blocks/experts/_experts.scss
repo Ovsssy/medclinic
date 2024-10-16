@@ -1,0 +1,135 @@
+.experts {
+  &__title {
+    margin-bottom: 60rem;
+    width: 978rem;
+  }
+
+  &__footnote {
+    margin-bottom: 10rem;
+    font-size: 28rem;
+
+    @media (max-width: $mobile) {
+      margin-bottom: 12rem;
+      font-size: 16rem;
+    }
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+    gap: 20rem;
+
+    &__item {
+      width: 390rem;
+      border-radius: 15rem;
+
+      &-image-wrapper {
+        position: relative;
+        margin-bottom: 20rem;
+
+        & img {
+          width: 100%;
+          height: 442rem;
+          border-radius: 15rem;
+          object-fit: cover;
+        }
+      }
+
+      &-experience {
+        position: absolute;
+        top: auto;
+        bottom: 20rem;
+        left: 20rem;
+        padding: 15rem 20rem;
+        border-radius: 10rem;
+        background: rgba(255, 255, 255, 0.70);
+        backdrop-filter: blur(12.4rem);
+      }
+
+      &-name {
+        font-size: 24rem;
+        font-weight: 500;
+        line-height: 110%;
+        margin-bottom: 10rem;
+      }
+
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        background-image: url('../img/back-ex.jpg');
+      }
+
+      &-record {
+        margin-top: 162rem;
+        margin-bottom: 114rem;
+        width: 100%;
+        text-align: center;
+        font-size: 32rem;
+        font-weight: 500;
+        line-height: 110%
+      }
+
+      & .green-text {
+        font-size: 48rem;
+        font-weight: 700;
+        line-height: 120%;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__button {
+    align-self: center;
+  }
+
+  @media (max-width: $desktop) {
+
+    &__title {
+      width: auto;
+    }
+
+    &-list {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &-list {
+      gap: 24rem;
+
+      &__item {
+        order: -1;
+
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+          background-image: none;
+          order: 0;
+        }
+
+        &-record {
+          margin-top: 0;
+          margin-bottom: 16rem;
+        }
+      }
+    }
+
+    &__button {
+      & p {
+        font-size: 16rem;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-list {
+      &__item {
+
+        &-experience{
+          left: 12rem;
+          bottom: 12rem;
+        }
+      }
+    }
+  }
+}

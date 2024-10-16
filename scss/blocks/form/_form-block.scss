@@ -1,0 +1,167 @@
+.form-block {
+  position: relative;
+  background: linear-gradient(284deg, rgba(0, 154, 148, 0.40) 2.09%, rgba(255, 255, 255, 0.00) 57.68%), linear-gradient(273deg, #FFF 6.59%, #F7F8FA 70.86%);
+  overflow: hidden;
+  z-index: 0;
+
+  &__title {
+    width: 753rem;
+    margin-bottom: 20rem;
+  }
+
+  &__description {
+    margin-bottom: 40rem;
+    width: 808rem;
+  }
+
+  &-image-doctor {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: 141rem;
+    width: 448rem;
+    height: 483rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-about-doctor {
+    position: absolute;
+    top: 98rem;
+    right: 467rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    width: 400rem;
+    padding: 20rem;
+    border-radius: 12rem;
+    background: #FFF;
+
+    &__experience {
+      padding: 10rem;
+      margin-bottom: 10rem;
+      width: fit-content;
+      border-radius: 8rem;
+      background-color: #009A94;
+
+      & span {
+        color: #FFF;
+      }
+    }
+
+    &__name {
+      font-weight: 500;
+    }
+
+    &__post {
+      font-weight: 300;
+    }
+  }
+
+  &-image-background {
+    position: absolute;
+    top: 250rem;
+    left: auto;
+    right: 0;
+    width: 843rem;
+    height: 217rem;
+    z-index: -1;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: $desktop) {
+
+    &__title {
+      width: 100%;
+    }
+
+    &-image-doctor {
+      right: 10rem;
+    }
+
+    &-about-doctor {
+      top: 274rem;
+      right: 345rem;
+      width: 320rem;
+    }
+
+    &__description {
+      width: auto;
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    padding-bottom: 210rem;
+    flex-direction: column;
+    width: 100%;
+
+    &-about-doctor {
+      top: auto;
+      bottom: 30rem;
+      right: auto;
+
+      & p {
+        font-size: 18rem;
+      }
+
+      &__experience {
+        margin-bottom: 0;
+      }
+    }
+
+    &-image-doctor {
+      width: 385rem;
+      height: 410rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding-bottom: 160rem;
+
+    &__description {
+      margin-bottom: 24rem;
+    }
+
+
+    &-image-doctor {
+      right: -30rem;
+      width: 168rem;
+      height: 190rem;
+    }
+
+    &-about-doctor {
+      top: auto;
+      bottom: 78rem;
+      right: auto;
+      padding: 10rem;
+      width: 233rem;
+      gap: 0;
+
+      & span,
+      & p {
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 120%;
+      }
+
+      &__post {
+        color: #A1A8B9;
+      }
+    }
+
+    &-image-background {
+      top: auto;
+      bottom: 0;
+      right: -35rem;
+      width: 432rem;
+      height: 83rem;
+    }
+  }
+}

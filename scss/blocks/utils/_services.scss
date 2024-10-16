@@ -1,0 +1,11 @@
+.services{
+  display: flex;
+  flex-direction: column;
+  gap: 40rem;
+
+  &-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+  }
+}
